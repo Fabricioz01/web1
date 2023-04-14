@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html><!--contiene todas las etiquetas de una pagina-->
+<head><!--contiene todo lo que no se ve en la pagina-->
+	<meta charset="utf-8"> <!--nos permite ver los caracteres de manera correcta-->
+	<title>Web 1</title> <!--Sirve para agregar un nombre a la pestaña de la página--> 
+	<link rel="icon"  href="uleam.ico">
+	<style> /*Sirve para agregar modificaciones css sin tener que usar una etiqueta link*/
+		body { /*sirve para darle las sig caracteristicas a todo el documento no referenciado con id*/
+			font-family: Arial, sans-serif; /*sirve para ponerle airal al texto, pero si el navegador no cuenta con esto agregará una fuente generica*/
+			background-color: #f5f5f5;/*da color de fondo, gris claro en este caso*/
+			color: #333; /*da color a la letra, color gris oscuro en este caso*/
+		}
+		h1 { /*agrega las sig modificaciones a los h1 sin referenciar*/
+			text-align: center; /*centra el texto*/
+			font-size: 36px; /*le da tamaño al texto*/
+			margin-top: 50px; /*le da un distancia sobre lo que hay arriba*/
+		}
+		h1:hover { /*agrega las sig modificaciones al h1 y el hover sirve que se haga la animacion cuando se pase el cursor encima*/
+			transform: scale(1.8); /*sirve para multiplicar el tamaño de letra en este caso aumenta un 80%*/
+			transform: all 0,3 ease; /*sirve para agregar un tiempo a la transicion*/
+		}
+		h2 { /*hace cambios a todas las tags h2*/
+			font-size: 28px; 
+			margin-bottom: 20px; /*le da una distancia sobre lo que está abajo*/
+			color: #E32DD9;
+		}
+		#datos-personales { /*hace referencia a todo lo que tenga ese id*/
+			background-color: #C5FFF1;
+			border-radius: 5px; /*sirve para redondear las esquitas*/
+			box-shadow: 0px 0px 5px #888; /*sirve para darle sombre al texto*/
+			padding: 20px; /*se usa para separar el div o la caja con el texto*/
+			margin-bottom: 30px; /*sirve para crear un espacio con la parte inferior*/
+		}
+		#datos-personales img:hover { /*sirve para modificar las imagenes del id mencionado cuando el cursor pase sobre el*/
+			transform: translateX(10px);  /*sirve para mover un objeto*/
+		}
+		#datos-personales img {
+			display: block;/* permite definir a un elemento como un bloque */
+			margin: 0 auto; /*sirve para centrar el elemento sin que choque con otros elementos*/
+			border-radius: 50%; ;/*convierte un elemento cuadarado a circular*/
+			border: 3px solid #333; /*sirve para crear un borde y darle color*/
+			margin-bottom: 40px;
+  			transition: transform 0.2s ease-in-out; /*sirve para hacer una animacion suave y definir el tiempo de animación*/
+		}
+		#datos-personales p { /*referencia todos los p con dicho id */
+			margin: 0; 
+			font-size: 18px;
+			line-height: 1.5; /*sirve para darle espacio entre llas etiquetas de parrafo*/
+			color: #000000;
+		}
+		#datos-personales span { /*referencia a las tags span dentro del id mencionado*/
+			font-weight: bold; /*sirve para darle un tono mas fuerte de negrita*/
+			color: #008080;
+		}
+		#datos-personales p:hover{ /*sirve para modicar las etiquetas p cuando el cursor pase sobre el texto*/
+			animation:moveText 1s linear infinite; /*sirve para mover agregar el tiempo de movimiento de manera infinita*/
+		}
+		li:hover{ /*sirve para modificar todas las etiquetas cuando el cursor pase sobre el texto*/
+			animation:moveText 1s linear infinite;
+		}
+		@keyframes moveText { /*permite crear una animación de inicio a fin*/
+			0%{
+				transform: translateX(0);/*sirve para mover el elemento determinados px a la derecha y el % al inicio es el recorrido de la animacion*/
+			}
+		    60% {
+		    	transform: translateX(25px);
+			}
+			100% {
+				transform: translateX(0);
+			}	
+		}
+		ul { /*sirve para modificar todas las tag ul*/
+			list-style: none; /*sirve para omitir los puntos que normalmente aparecen a un costado de la lista*/
+			margin: 0;
+			padding: 0;
+		}
+		li {/*sirve par modificar el estilo de todos los componentes de una lista*/
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		#estudios-realizados, #experiencia-laboral, #capacitaciones { /*sirve para modificar las id mencionadas*/
+			background-color: #C5FFF1;
+			color: #008080;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #888; /*le da sombra a los elementos*/
+			padding: 20px;
+			margin-bottom: 30px;
+		}
+		#estudios-realizados img { /*sirve para modificar las imagenes del id mencionado*/
+			width:200px; /*ancho*/
+			height:150px; /*altura*/
+			float: right; /*mueve el elemento a la derecha*/
+		}
+		#estudios-realizados img:hover{ /*sirve para darle efeto a la imagen cuando el cursor pase sobre el*/
+			transform: scale(1.2); /*le da un aumento al elemento, en este caso 20%*/
+			transform: all 0.3 ease; /*define el tiempo*/
+		}
+		#experiencia-laboral img{ /*modifica las imagenes del id mencionado*/
+			width: 200px;
+			height: 150px;
+			float: right;
+		}
+		#experiencia-laboral img:hover{ /*le da efecto a una imagen cuando el cursor pasa encima*/
+			transform:scale(1.2);
+			transform:all 0,3 ease;
+		}
+		#capacitaciones img{ /*modifica las imagenes que estén dentro del id mencionado*/
+			width: 200px;
+			height: 150px;
+			float: right;
+		}
+		#capacitaciones img:hover{ /*le da efecto a una imagen cuando el cursor pasa encima*/
+			transform: scale(1.2);
+			transform: all 0,3 ease;
+		}
+		#referencias-personales h2{ /*realiza cambios al h2 dentro del id mencionado*/
+			color: #E32DD9;
+		}
+		#referencias-personales { /*realiza cambios a los elementos dentro del id mencionado*/
+			background-color: #C5FFF1;
+		}
+		table { /*modifica todas las tablas de la pagina*/
+		
+			background-color: #FFB6C1; /*le da un color de fondo*/
+			border-collapse: collapse;/*sirve para dar un borde solido a las celdas*/
+			margin: 0 auto; /*sirve para centrar el documento horizontalmente*/
+			margin-bottom: 30px;/*sirve para separar con la parte inferior*/
+		}
+		th, td {/*modifica todas las tags th y td*/
+			padding: 10px; /*sirve para dar un espacio entre el elemento y los bordes de un contenedor*/
+			text-align: left;/*alinea el texto del ñado izquierdo*/
+		}
+		th { /*modifica todas las tags th*/
+			background-color: #000000;
+			color: #fff;
+			font-size: 18px;
+		}
+		td { /*modifica todas las tags td*/
+			font-size: 16px;
+			background-color: #DDDCCC;
+		}
+		footer {/*modifica el pie de pagina*/
+ 			display: flex; /*sirve para que los elementos se ordenen de forma automatica*/
+			flex-direction: column; /*hace que los elementos secundarios se posicionen abajo*/
+			justify-content: center;/*hace que los elementos secundarios se alinien automaticamente*/
+			align-items: center;
+			background-color: #FFFACD;
+			color: #000000;
+			padding: 0px;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+		#redes-sociales { /*hace referencia a los elementos del id mencionado*/
+			display: flex;
+			justify-content: center;
+			margin-bottom: 0px;
+		}
+
+		#redes-sociales a {/*hace referencia a las etiquetas a dentro del id mencionado*/
+			margin-right: 10px;
+			color: #000000;
+			transition: color 0.2s ease-in-out;/*sirve para darle tiempo a un efecto*/
+		}
+
+		#redes-sociales a:hover {/*caambia los elementos de una etiqueta cuando el cursor pase sobre el*/
+ 			color: #ff5722;
+			}
+		#autor p {/*modifica la etiqueta p del id mencionado*/
+			margin: 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body><!--contiene lo que se verá en la pagina-->
+	<h1>Curriculum Vitae</h1> <!-- este h1 va fuera del div para separarlo del resto-->
+	<div id="datos-personales"> <!--El div servirá para separar los "datos de personales" con id para editarlo con css-->
+		<h2>Datos personales:</h2><!--El h2 nos muestra el subtitulo-->
+		<img src="fabri.jpg" width="250px" height="300px" alt="Foto de perfil" title="Fabricio Zavala"><!--sirve para agregar imagen con atributos para ajustar la dimension y darle texto a la imagen-->
+		<p>Nombres: <span>Fabricio Josué</span></p>
+		<p>Apellidos: <span>Zavala Reyes</span></p><!--Las etiquetas span nos permiten separar una parte del texto para editarlo en css-->
+		<p>Edad: <span>20 años</span></p>
+		<p>Estado civil: <span>Soltero</span></p>
+		<p>nacionalidad: <span>ecuatoriana</span></p>
+		<p>Provincia <span>Mababí-Montecristi</span></p>
+		<p>Dirección: <span>Ecuador-Manabí-Montecristi</span></p>
+		<p>Correo electrónico: <span>e1317392239@live.uleam.edu.ec</span></p>
+		<p>Teléfono: <span>0962766008</span></p>
+	</div>
+	
+	<div id="estudios-realizados"> <!--Div con id para referenciar todos los campos que hay dentro-->
+		<img src="estu.png" title="estudios realizados"><!--tag para agregar una imagen-->
+		<h2 title="Algunos estudios se encuentran en proceso">Estudios Realizados:</h2><!-- el atributo title sirve para mostrar texto cuando se pase el cursor encima-->
+		<ul><!--tag ul para mostra contenido en forma de lista-->
+			<li>Ing en Tegnologia de la Información - ULEAM</li>
+			<li>Cursos de POO en JAVA, HTML, CSS y SQL SERVER - YouTube</li>
+			<li>Graduado en Rocky Linux y Windows Server - NetaCad </li>
+		</ul>
+	</div>
+	
+	<div id="experiencia-laboral"><!--div con id para referenciar campos-->
+		<img src="exp.png" title="Experiencia laboral"> <!--tag para mostrar imagen-->
+		<h2 title="Las experiencias descritas son ficticias por el momento">Experiencia Laboral:</h2>
+		<ul>
+			<li>Desarrollador de Software - Google A (2021)</li>
+			<li>Analista de Sistemas - Ministerio de Ecuador (2020)</li>
+			<li>Practicante de Programación - ULEAM (2022)</li>
+		</ul>
+	</div>
+	
+	<div id="capacitaciones"> <!--div para dividir con id para referenciar-->
+		<img src="capaa.png" title="capacitación">
+		<h2 title="Información didactica jaja">Capacitaciones:</h2>
+		<ul>
+			<li>Practicas de vinculación - La Fabril (2023)</li>
+			<li>Intento de entrar a la red wifi para profesores - ULEAM (2022)</li>
+			<li>Analista de datos - Chevrolet(2023)</li>
+		</ul>
+	</div>
+	
+	<div id="referencias-personales"> <!--div para referenciar-->
+		<h2 title="la información presente en la tabla no es real">Referencias personales:</h2>
+		<table border="1px"><!--esta etiqueta nos permite crear una tabla-->
+			<thead> <!--esta tag sirve para referenciar que es el encabezado de la tabla-->
+				<tr><!--sirve para contener una fila de la tabla-->
+					<th>Nombre</th><!--muestra en negrilla las columnas de una tabla-->
+					<th>Cargo/Profesión</th>
+					<th>Teléfono</th>
+					<th>Correo electrónico</th>
+				</tr>
+			</thead>
+			<tbody><!--sirve para referenciar el cuerpo de una tabla-->
+				<tr>
+					<td>Maria Sabando</td> <!--sirve para contener un dato de una tabla-->
+					<td>Gerente General-Contabilidad y auditoria</td>
+					<td>0912359746</td>
+					<td>mariasabando1@gmail.com</td>
+				</tr>
+				<tr>
+					<td>Jose Rodríguez</td>
+					<td>Full Stack Developer</td>
+					<td>09654987321</td>
+					<td>josero12@gmail.com</td>
+				</tr>
+				<tr>
+					<td>Andrea López</td>
+					<td>Supervisor-Diseñadora gráfica</td>
+					<td>0987654321</td>
+					<td>andrealopez123@gmail.com</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+<footer><!--Sirve para referenciar el pie de pagina o la parte final-->
+	<div id="redes-sociales">
+	    <a href="https://aulavirtualmoodle.uleam.edu.ec/" target="_blank"><i >Moodle</i></a> <!--sirve para redireccionar a una pagina en una nueva pestaña-->
+		<a href="https://www.youtube.com/watch?v=kN1XP-Bef7w&t=3178s" target="_blank"><i></i> Dónde aprendí</a>
+		<a href="https://www.instagram.com/fabri_._fabri/" target="_blank">instagram</a>
+	</div>
+  	<p id="autor">© 2023 Fabricio Josué Zavala Reyes - Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
+
